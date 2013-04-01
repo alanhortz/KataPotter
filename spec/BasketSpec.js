@@ -1,5 +1,6 @@
 describe("Basket", function() {
 	var basket;
+	var book1 = new Book(1,'Harry Potter tome 1',8);
 
  	beforeEach(function() {
   		basket = new Basket();
@@ -17,10 +18,9 @@ describe("Basket", function() {
 	});
 
 	describe("when a book has been added", function () {
-		var book = new Book(1,'Harry Potter tome 1',8);
-
+		
  		beforeEach(function() {
-  			basket.add(book);
+  			basket.add(book1);
  		});		
 
  		it("should indicates that the number of items is 1", function () {
@@ -28,16 +28,15 @@ describe("Basket", function() {
  		});
 
  		it("should indicates that the amount of the checkout is equal to the book price", function () {
- 			expect(basket.checkout()).toBe(book.price);
+ 			expect(basket.checkout()).toBe(book1.price);
  		});
 	});
 
 	describe("when two identical book has been added", function () {
-		var book = new Book(1,'Harry Potter tome 1',8);
 
 		beforeEach(function() {
-			basket.add(book);
-			basket.add(book);
+			basket.add(book1);
+			basket.add(book1);
 
 		});
 
@@ -48,6 +47,10 @@ describe("Basket", function() {
 		it("should indicates that the amount of the checkout is simply equal to the sum of the prices", function() {
 			expect(basket.checkout()).toBe(16);
 		});
+
+	});
+
+	describe("when two different books added", function() {
 
 	});
 
