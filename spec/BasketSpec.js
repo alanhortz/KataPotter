@@ -54,11 +54,12 @@ describe("Basket", function() {
 
 	});
 
-	describe("when two different books added", function() {
+	describe("when contains only two different books", function() {
 
 		beforeEach(function() {
 			basket.add(book1);
 			basket.add(book2);
+			basket.add(book1);
 		});
 
 		it("should indicates that a discount of 5% has been applied on the amount of the checkout", function() {
