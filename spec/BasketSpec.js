@@ -110,4 +110,22 @@ describe("Basket", function() {
 		});
 	});
 
+	describe("when contains 2 copies of the first book, 2 copies of the second book, 2 copies of the third book, 1 copy of the fourth book, 1 copy of the fifth book",function() {
+
+		beforeEach(function() {
+			basket.add(book1);
+			basket.add(book1);
+			basket.add(book2);
+			basket.add(book2);
+			basket.add(book3);
+			basket.add(book3);
+			basket.add(book4);
+			basket.add(book5);
+		});
+
+		it("should indicates that a discount of 20% has been applied of each of the two sets of four different books", function() {
+			expect(basket.checkout()).toBe( (8 * 4 * 0.8) + (8 * 4 * 0.8) );
+		});
+	});	
+
 });
