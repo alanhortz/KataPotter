@@ -1,6 +1,7 @@
 describe("Basket", function() {
 	var basket;
 	var book1 = new Book(1,'Harry Potter tome 1',8);
+	var book2 = new Book(2,'Harry Potter tome 2',8);
 
  	beforeEach(function() {
   		basket = new Basket();
@@ -52,6 +53,14 @@ describe("Basket", function() {
 
 	describe("when two different books added", function() {
 
+		beforeEach(function() {
+			basket.add(book1);
+			basket.add(book2);
+		});
+
+		it("should indicates that a discount of 5% has been applied on the amount of the checkout", function() {
+			expect(basket.checkout()).toBe(8 * 2 * 0.95);
+		});
 	});
 
 });
