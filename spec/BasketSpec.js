@@ -2,9 +2,9 @@ describe("Basket", function() {
 	var basket;
 	var book1 = new Book(1,'Harry Potter tome 1',8);
 	var book2 = new Book(2,'Harry Potter tome 2',8);
-	var book3 = new Book(1,'Harry Potter tome 3',8);
-	var book4 = new Book(2,'Harry Potter tome 4',8);
-	var book5 = new Book(2,'Harry Potter tome 5',8);
+	var book3 = new Book(3,'Harry Potter tome 3',8);
+	var book4 = new Book(4,'Harry Potter tome 4',8);
+	var book5 = new Book(5,'Harry Potter tome 5',8);
 
  	beforeEach(function() {
   		basket = new Basket();
