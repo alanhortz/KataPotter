@@ -54,7 +54,7 @@ describe("Basket", function() {
 
 	});
 
-	describe("when contains only two different books", function() {
+	describe("when contains only two different books on a total of three", function() {
 
 		beforeEach(function() {
 			basket.add(book1);
@@ -62,12 +62,12 @@ describe("Basket", function() {
 			basket.add(book1);
 		});
 
-		it("should indicates that a discount of 5% has been applied on the amount of the checkout", function() {
-			expect(basket.checkout()).toBe(8 * 2 * 0.95);
+		it("should indicates that a discount of 5% has been applied on those two books", function() {
+			expect(basket.checkout()).toBe(8 * 2 * 0.95 + 8);
 		});
 	});
 
-	describe("when the five tome have been added",function() {
+	describe("when contains five different books",function() {
 
 		beforeEach(function() {
 			basket.add(book1);
@@ -78,7 +78,7 @@ describe("Basket", function() {
 
 		});
 
-		it("should indicates that a huge discount of 25% has been applied on the amount of the checkout", function() {
+		it("should indicates that a huge discount of 25% has been applied on those five books", function() {
 			expect(basket.checkout()).toBe(8 * 5 * 0.75);
 		});
 	});
