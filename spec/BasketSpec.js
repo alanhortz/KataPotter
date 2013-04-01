@@ -63,13 +63,44 @@ describe("Basket", function() {
 		});
 	});
 
-	describe("when contains five different books",function() {
+	describe("when contains three different books on a total of four", function() {
+
+		beforeEach(function() {
+			basket.add(book1);
+			basket.add(book2);
+			basket.add(book3);
+			basket.add(book3);
+		});
+
+		it("should indicates that a discount of 10% has been applied on those three books", function() {
+			expect(basket.checkout()).toBe(8 * 3 * 0.95 + 8);
+		});
+	});
+
+	describe("when contains four different books on a total of five", function() {
+		beforeEach(function() {
+			basket.add(book1);
+			basket.add(book2);
+			basket.add(book3);
+			basket.add(book4);
+			basket.add(book4);
+
+		});
+
+		it("should indicates that a discount of 20% has been applied on those four books", function() {
+			expect(basket.checkout()).toBe(8 * 4 * 0.8 + 8);
+		});		
+
+	});
+
+	describe("when contains five different books on a total of six",function() {
 
 		beforeEach(function() {
 			basket.add(book1);
 			basket.add(book2);
 			basket.add(book3);
 			basket.add(book4);
+			basket.add(book5);
 			basket.add(book5);
 
 		});
