@@ -1,12 +1,18 @@
-function Basket () = {
-
+function Basket() {
+	this.amount = 0;
+	this.items = [];
 }
-Basket.prototype.add = function (item) {
-
-};
 Basket.prototype.count = function () {
-	return 0;
+	return this.items.length;
+};
+Basket.prototype.add = function (item) {
+	this.items.push(item);
 };
 Basket.prototype.checkout = function () {
-	return 0;
+	if (this.items.length === 0) {
+		return 0;
+	} 
+	else {
+		return this.items[0].price;
+	}
 };

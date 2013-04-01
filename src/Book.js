@@ -1,10 +1,5 @@
-function Book(id, title) {
+function Book(id, title, price) {
 	this.id = id;
 	this.title = title;
+	this.price = price;
 }
-Book.prototype.id = function () {
-	return this.id;
-};
-Book.prototype.title = function () {
-	return this.title;
-};
