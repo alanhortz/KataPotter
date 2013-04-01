@@ -41,7 +41,14 @@ describe("Basket", function() {
 			basket.add(book2);
 		});
 
-		
+		it("should indicates that the number of items is 2", function() {
+			expect(basket.count()).toBe(2);
+		});
+
+		it("should indicates that the amount of the checkout is simply equal to the sum of the prices", function() {
+			expect(basket.checkout()).toBe(16);
+		});
+
 	});
 
 });

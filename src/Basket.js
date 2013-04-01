@@ -9,10 +9,11 @@ Basket.prototype.add = function (item) {
 	this.items.push(item);
 };
 Basket.prototype.checkout = function () {
-	if (this.items.length === 0) {
-		return 0;
-	} 
-	else {
-		return this.items[0].price;
-	}
+	var sum = 0;
+
+	for(var i = 0; i < this.items.length; i++) {
+		sum = sum + this.items[i].price;
+	};
+		
+	return sum;
 };
