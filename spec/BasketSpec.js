@@ -32,13 +32,13 @@ describe("Basket", function() {
  		});
 	});
 
-	describe("when two different book has been added", function () {
-		var book1 = new Book(1,'Harry Potter tome 1',8);
-		var book2 = new Book(2,'Harry Potter tome 2',8);
+	describe("when two identical book has been added", function () {
+		var book = new Book(1,'Harry Potter tome 1',8);
 
 		beforeEach(function() {
-			basket.add(book1);
-			basket.add(book2);
+			basket.add(book);
+			basket.add(book);
+
 		});
 
 		it("should indicates that the number of items is 2", function() {
