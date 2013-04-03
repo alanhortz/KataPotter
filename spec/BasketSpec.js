@@ -73,7 +73,7 @@ describe("Basket", function() {
 		});
 
 		it("should indicates that a discount of 10% has been applied on those three books", function() {
-			expect(basket.checkout()).toBe(8 * 3 * 0.95 + 8);
+			expect(basket.checkout()).toBe((8 * 3 * 0.90) + 8);
 		});
 	});
 
@@ -88,7 +88,7 @@ describe("Basket", function() {
 		});
 
 		it("should indicates that a discount of 20% has been applied on those four books", function() {
-			expect(basket.checkout()).toBe(8 * 4 * 0.8 + 8);
+			expect(basket.checkout()).toBe((8 * 4 * 0.8) + 8);
 		});		
 
 	});

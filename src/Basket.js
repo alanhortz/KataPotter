@@ -17,17 +17,28 @@ Basket.prototype.add = function (item) {
 		for (var i = 0; i < mainLength; i++) {
 			
 			var innerLength = this.items[i].length;
+
+			var idFound = false;
 			for (var j = 0; j < innerLength; j++) {
-				if(this.items[i][j] !== item.id && this.items[i][j].length < 5) {
-					this.items[i][j].push(item.id);
+
+				if(this.items[i][j] === item.id) {
+					idFound = true;
+					break;
+				}
+
+				
+			};
+			if(!idFound && this.items[i].length < 5) {
+					this.items[i].push(item.id);
 					this.innerCount++;
-				} else {
+					break;
+			} else {
 					this.items.push([item.id]);
 					this.innerCount++;
 					break;
-				}
-				
-			};
+			}
+
+
 		};
 	}
 };
