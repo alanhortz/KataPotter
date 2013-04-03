@@ -93,14 +93,13 @@ describe("Basket", function() {
 
 	});
 
-	describe("when contains five different books on a total of six",function() {
+	describe("when contains five different books on a total of five",function() {
 
 		beforeEach(function() {
 			basket.add(book1);
 			basket.add(book2);
 			basket.add(book3);
 			basket.add(book4);
-			basket.add(book5);
 			basket.add(book5);
 
 		});

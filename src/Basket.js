@@ -45,12 +45,12 @@ Basket.prototype.add = function (item) {
 Basket.prototype.checkout = function () {
 	
 
-	if(this.items.length === 5) {
-		if(this.items[0][0].length === 1 && this.items[1][0].length === 1 && this.items[2][0].length === 1 && this.items[3][0].length === 1 && this.items[4][0].length === 1) {
+	if(this.items.length === 1 && this.items[0].length === 5) {
+		
 			this.amount = 8 * 5 * 0.75
 
 			return this.amount;
-		}
+	
 	} else {
 		this.amount = 0;
 
