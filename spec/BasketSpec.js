@@ -10,7 +10,7 @@ describe("Basket", function() {
   		basket = new Basket();
  	});
 
-	describe("when empty", function() {
+	describe("when created", function() {
 
 		it("should indicates that the number of items is zero", function() {
 			expect(basket.count()).toBe(0);
