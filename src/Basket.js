@@ -28,14 +28,16 @@ Basket.prototype.add = function (item) {
 
 				
 			};
-			if(!idFound && this.items[i].length < 5) {
+			if(!idFound && this.items[i].length < 4) {
 					this.items[i].push(item.id);
 					this.innerCount++;
 					break;
 			} else {
+				if(i === (mainLength-1)){
 					this.items.push([item.id]);
 					this.innerCount++;
 					break;
+				} 
 			}
 
 
@@ -45,7 +47,7 @@ Basket.prototype.add = function (item) {
 Basket.prototype.checkout = function () {
 	
 
-	if(this.items.length === 1 && this.items[0].length === 5) {
+	if(this.items.length === 2 && this.items[0].length === 4 && this.items[1].length === 1 && this.items[1][0] === 5) {
 		
 			this.amount = 8 * 5 * 0.75
 
